@@ -1,0 +1,16 @@
+extends layout
+
+block body
+  table.table.table-bordered.table-striped(style="width:100%")
+    tr
+        th Title
+        th Description
+        th Price(Usd)
+
+    each product in products
+      tr
+        td= product.title
+        td= product.description
+        - var price_usd = product.price *1.0 / 100
+        td= price_usd + 'USD'
+  p #{products}
